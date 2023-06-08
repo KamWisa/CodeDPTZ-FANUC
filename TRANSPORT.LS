@@ -1,0 +1,35 @@
+/PROG  TRANSPORT
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "";
+PROG_SIZE	= 340;
+CREATE		= DATE 22-10-11  TIME 17:36:30;
+MODIFIED	= DATE 23-01-24  TIME 16:00:10;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 11;
+MEMORY_SIZE	= 668;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+/APPL
+/MN
+   1:   ;
+   2:  R[59]=0    ;
+   3:  //R[115]=123    ;
+   4:  R[115]=R[115]*456    ;
+   5:  R[115]=R[115]+789    ;
+   6:  R[115]=R[115] MOD 12345679    ;
+   7:  IF (R[115]<0) THEN ;
+   8:  R[115]=R[115]*(-1)    ;
+   9:  ENDIF ;
+  10:  R[116]=R[115] MOD 1000    ;
+  11:  R[59]=8    ;
+/POS
+/END
